@@ -14,11 +14,11 @@
       cards += '<img src="' + items[i].strMealThumb + '" width="350" height="300">';
 
       <!--Publication Date-->
-      cards += '<td><div class="card-text">Information:<br>' + items[i].strInstructions + '</div>';
+      cards += '<td><div class="card-text"><h6>Recipe:</h6>' + items[i].strInstructions + '</div>';
 
       <!--Summary Short-->
       if(items[i].strTags){
-        cards += '<br><h6>Tags:<br>' + items[i].strTags + '</h6>';
+        cards += '<div><br><h6>Tags:</h6>' + items[i].strTags + '</div>';
       }
       else {
         cards += '<br><h6>Tags:<br>-</h6>';
@@ -45,7 +45,7 @@
 
       cards += '<div id="myModal" class="modal fade"><div class="modal-dialog modal-login"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Add review</h4><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div><div class="modal-body">';
         
-      cards += '<form class="" action="/reviews" method="post"><div>Meal:</div><input type="text" class="form-control" name="food" value="'+ items[i].strMeal + '" readonly><div>Review: </div><div><input type="text" class="form-control" name="review_text" placeholder="Review" required="required"></div><div><br><input class="btn btn-light" type="submit" name="Submit1" value="Submit"/></div></div></form><div class="modal-footer"><div id="message" style="display: block"></div></div></div></div></div>';
+      cards += '<form class="" action="/reviews" method="post"><div>Meal:</div><input type="text" class="form-control" name="food" value="'+ items[i].strMeal + '" readonly><div>Review: </div><div><input type="text" class="form-control" name="review_text" placeholder="Review" required="required"></div><div><br><input class="btn btn-dark" type="submit" name="Submit1" value="Submit"/></div></div></form><div class="modal-footer"><div id="message" style="display: block"></div></div></div></div></div>';
 
       <!--Card footer-->
       cards += '</div></div></td></tr>';
