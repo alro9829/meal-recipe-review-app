@@ -1,0 +1,38 @@
+<%- include('../partials/header'); -%>
+
+<div class="" style="background-color: #0f415c;">
+  <div class="container-fluid" style="padding: 2%; ">
+    <form class="" action="/reviews_search" method="post">
+      <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-5">
+          <input class="form-control" type="text" name="review_title" placeholder="Search meal reviews">
+        </div>
+        <div class="col-1">
+          <input class="btn btn-light" type="submit" name="Submit" value="Submit"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="center">
+    <%
+    if(items) {
+      var review_card = '<table class="table-bordered" class="center" id="reviews_table"><tr><th>Meal</th><th>Review</th><th>Review Date</th></tr>';
+
+      for(var i=0; i < items.length; i++) {
+
+        review_card += '<tr><td>' + items[i].meal_name + '</td><td>' + items[i].review + '</td><td>' + items[i].left + '</td></tr>';
+
+      }
+
+      review_card += '</table>';
+
+      %>
+        <%- review_card %>
+      <% } %>
+</div>
+<%- include('../partials/footer'); -%>
