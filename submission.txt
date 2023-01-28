@@ -1,0 +1,8 @@
+Heroku app: https://frozen-dawn-78046.herokuapp.com/
+
+Run locally: npm run start
+Run tests: npm run test
+
+Database: psql --host=ec2-44-193-111-218.compute-1.amazonaws.com --port=5432 --username=pwpflzpiebqzri --password --dbname=d2k6qlcsrfghg1
+
+    password: ae2cbce77e84de860e8e6383282b2a0ed6dceabd3bd5f83173b113269b00e5e8
