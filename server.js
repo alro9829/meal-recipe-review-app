@@ -6,15 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const axios = require("axios");
 const { Client } = require("pg");
 
-const client = new Client({
-  host: "ec2-52-3-60-53.compute-1.amazonaws.com",
-  user: "mvcawjsjzkxgpr",
-  port: 5432,
-  password: "1cd7bcfb2c18ca2e9a6c65a658f15151b79257d17ec39878bc5e7be69ccaaa30",
-  database: "d42f1g1gpcmvgb",
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
-});
+// const Client connection here
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/"));
