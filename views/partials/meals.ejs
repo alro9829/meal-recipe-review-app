@@ -1,0 +1,59 @@
+<%
+  if (items) {
+	  var cards = '<table class="table table-bordered" id="meals_table">';
+	  <!-- Iterate the items object & update the cards variable -->
+    for(var i=0; i < 1; i++) {
+
+      <!--Card header-->
+      cards += '<tr><td><div class="card"><div class="card-body">';
+
+      <!-- Movie Title -->
+      cards += '<h4 class="card-title">' + items[i].strMeal + '</h4>';
+
+      <!-- URL/suggested text -->
+      cards += '<img src="' + items[i].strMealThumb + '" width="350" height="300">';
+
+      <!--Publication Date-->
+      cards += '<td><div class="card-text"><h6>Recipe:</h6>' + items[i].strInstructions + '</div>';
+
+      <!--Summary Short-->
+      if(items[i].strTags){
+        cards += '<div><br><h6>Tags:</h6>' + items[i].strTags + '</div>';
+      }
+      else {
+        cards += '<br><h6>Tags:<br>-</h6>';
+      }
+      
+
+      <!--Buttons-->
+      if(items[i].strSource){
+        cards += '<br><a href="' + items[i].strSource + '" style="display: inline-block;"><button>Link To Source</button></a>';
+      }
+      else {
+        cards += '<br><a href="" style="display: inline-block;"><button>Link Unavailable</button></a>';
+      }
+
+      if(items[i].strYoutube){
+        cards += '<a href="' + items[i].strYoutube + '" style="display: inline-block;"><button>Link To Youtube</button></a>';
+      }
+      else {
+        cards += '<a href="" style="display: inline-block;"><button>Link Unavailable</button></a>';
+      }
+
+      <!--Modal for reviews-->
+      cards += '<br><br><a href="#myModal" class="trigger-btn" data-toggle="modal"><button>Add Review</button></a></td>';
+
+      cards += '<div id="myModal" class="modal fade"><div class="modal-dialog modal-login"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Add review</h4><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div><div class="modal-body">';
+        
+      cards += '<form class="" action="/reviews" method="post"><div>Meal:</div><input type="text" class="form-control" name="food" value="'+ items[i].strMeal + '" readonly><div>Review: </div><div><input type="text" class="form-control" name="review_text" placeholder="Review" required="required"></div><div><br><input class="btn btn-dark" type="submit" name="Submit1" value="Submit"/></div></div></form><div class="modal-footer"><div id="message" style="display: block"></div></div></div></div></div>';
+
+      <!--Card footer-->
+      cards += '</div></div></td></tr>';
+    
+  }
+
+  cards += '</table>';
+
+%>
+    <%- cards %>
+<% } %>
